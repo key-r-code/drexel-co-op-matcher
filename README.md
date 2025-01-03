@@ -77,9 +77,9 @@ pip install -r requirements.txt
 ```
 
 4. Create a `.env` file and replace with your gemini API key. See [.env.example](.env.example)
-``bash
+```bash
 touch .env
-``
+```
 
 5. Add resume PDF in the same directory
 
