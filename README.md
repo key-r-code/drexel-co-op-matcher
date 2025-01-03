@@ -2,20 +2,19 @@
 
 ```
 
-                              ______________                               
-                        ,===:'.,            `-._                           
-                             `:.`---.__         `-._                       
-                               `:.     `--.         `.                     
-                                 \.        `.         `.                   
-                         (,,(,    \.         `.   ____,-`.,                
-                      (,'     `/   \.   ,--.___`.'                         
-                  ,  ,'  ,--.  `,   \.;'         `                         
-                   `{D, {    \  :    \;                                    
-                     V,,'    /  /    //                                    
-                     j;;    /  ,' ,-//.    ,---.      ,                    
-                     \;'   /  ,' /  _  \  /  _  \   ,'/                    
-                           \   `'  / \  `'  / \  `.' /                     
-                            `.___,'   `.__,'   `.__,'  
+   (  )   /\   _                 (     
+    \ |  (  \ ( \.(               )                      _____
+  \  \ \  `  `   ) \             (  ___                 / _   \
+ (_`    \+   . x  ( .\            \/   \____-----------/ (o)   \_
+- .-               \+  ;          (  O                           \____
+                          )        \_____________  `              \  /
+(__                +- .( -'.- <. - _  VVVVVVV VV V\                 \/
+(_____            ._._: <_ - <- _  (--  _AAAAAAA__A_/                  |
+  .    /./.+-  . .- /  +--  - .     \______________//_              \_______
+  (__ ' /x  / x _/ (                                  \___'          \     /
+ , x / ( '  . / .  /                                      |           \   /
+    /  /  _/ /    +                                      /              \/
+   '  (__/                                             /                  \
 
  ```
 
@@ -75,13 +74,8 @@ This project aims to automate finding all those co-ops you might be best suited 
 Project may stop working at any time, contributions are welcome! To contribute:
 
 1. Fork the repository.
-
 2. Create a new branch (git checkout -b feature/my-new-feature).
-
 3. Make your changes.
-
 4. Commit your changes (git commit -am 'Add new feature').
-
 5. Push to the branch (git push origin feature/my-new-feature).
-
 6. Create a pull request.
