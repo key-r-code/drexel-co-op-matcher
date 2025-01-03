@@ -1,0 +1,7 @@
+selenium
+PyPDF2
+langchain-community
+langchain
+faiss-cpu
+google-generativeai
+numpy
