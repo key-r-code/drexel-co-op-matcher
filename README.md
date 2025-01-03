@@ -26,7 +26,7 @@ This project aims to help anyone find the most suitable co-op positions by using
 
 **1. Web Scraping**
 
-![alt text](image.png)
+![image](./figures/web_scraping.png)
 
 * Uses Selenium to log into DrexelOne and scrape available co-op postings.
 * Saves all the static HTML pages in a directory.
@@ -34,7 +34,7 @@ This project aims to help anyone find the most suitable co-op positions by using
 
 **2. LLM pipeline**
 
-<img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2024/09/26/ML15773-01_rag_arch-1-1-1024x605.png"/>
+![image](./figures/LLM_pipeline.png)
 
 * Data Preparation:
 
