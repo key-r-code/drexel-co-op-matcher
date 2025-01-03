@@ -1,32 +1,28 @@
 # drexel-co-op-matcher
 
-```
-
-            _/(               <~\  /~>               )\_
-          .~   ~-.            /^-~~-^\            .-~   ~.
-       .-~        ~-._       : /~\/~\ :       _.-~        ~-.
-    .-~               ~~--.__: \0/\0/ ;__,--~~               ~-.
-   /                        ./\. ^^ ./\.                        \
-  .                         |  ( )( )  |                         .
-  -~~--.        _.---._    /~   U`'U   ~\    _.---._        .--~~-
-        ~-. .--~       ~~-|              |-~~       ~--. .-~
-           ~              |  :        :  |_             ~
-                          `\,'  :  :  `./' ~~--._
-                         .(<___.'  `,___>),--.___~~-.
-                         ~ (((( ~--~ ))))      _.~  _)
-                            ~~~      ~~~/`.--~ _.--~
-                                        \,~~~~~  
-
-
- ```
-
- 
-
 ## About
 
 Ever get tired of manually scrolling through all the co-op postings on DrexelOne all within one week? Now you don't have to!
 
 This project aims to automate finding all those co-ops you might be best suited for using an LLM pipeline. 
+
+```
+                          ,     \    /      ,
+                         / \    )\__/(     / \
+                        /   \  (_\  /_)   /   \
+     __________________/_____\__\@  @/___/_____\_________________
+     |                          |\../|                          |
+     |                           \VV/                           |
+     |                                                          |
+     |                                                          |
+     |                                                          |
+     |                                                          |
+     |__________________________________________________________|
+                   |    /\ /      \\       \ /\    |
+                   |  /   V        ))       V   \  |
+                   |/     `       //        '     \|
+                   `              V                ' 
+ ```
 
 ## How it works
 
