@@ -5,21 +5,20 @@ Ever get tired of manually scrolling through all the co-op postings on DrexelOne
 This project aims to help anyone find the most suitable co-op positions by using LLMs.
 
 ```
-                          ,     \    /      ,
-                         / \    )\__/(     / \
-                        /   \  (_\  /_)   /   \
-     __________________/_____\__\@  @/___/_____\_________________
-     |                          |\../|                          |
-     |                           \VV/                           |
-     |                                                          |
-     |                                                          |
-     |                                                          |
-     |                                                          |
-     |__________________________________________________________|
-                   |    /\ /      \\       \ /\    |
-                   |  /   V        ))       V   \  |
-                   |/     `       //        '     \| 
-                   `              V                ' 
+            _/(               <~\  /~>               )\_
+          .~   ~-.            /^-~~-^\            .-~   ~.
+       .-~        ~-._       : /~\/~\ :       _.-~        ~-.
+    .-~               ~~--.__: \0/\0/ ;__,--~~               ~-.
+   /                        ./\. ^^ ./\.                        \
+  .                         |  ( )( )  |                         .
+  -~~--.        _.---._    /~   U`'U   ~\    _.---._        .--~~-
+        ~-. .--~       ~~-|              |-~~       ~--. .-~
+           ~              |  :        :  |_             ~
+                          `\,'  :  :  `./' ~~--._
+                         .(<___.'  `,___>),--.___~~-.
+                         ~ (((( ~--~ ))))      _.~  _)
+                            ~~~      ~~~/`.--~ _.--~
+                                        \,~~~~~ 
  ```
 
 ## How it works
@@ -103,8 +102,7 @@ This will parse all the HTML files and create a single JSON file.
 
 9. Run `gemini-analysis-starter-nb.ipynb`
 
-### TO DO:
----
+## TO DO:
 
 **dragonScraper.py**
 
@@ -115,7 +113,7 @@ This will parse all the HTML files and create a single JSON file.
 **LLM-pipeline**
 
 - Add a geminiPipeline class
-- Find optimal chunk_size and chunk_overlap
+- Find optimal `chunk_size` and `chunk_overlap`
 
 **CLI App**
 
