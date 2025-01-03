@@ -1,0 +1,7 @@
+/.ipynb_checkpoints
+/faiss_index
+/job_htmls
+.env
+__pycache__
+test*.py
+Untitled*.ipynb
