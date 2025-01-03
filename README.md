@@ -26,6 +26,8 @@ This project aims to help anyone find the most suitable co-op positions by using
 
 **1. Web Scraping**
 
+![alt text](image.png)
+
 * Uses Selenium to log into DrexelOne and scrape available co-op postings.
 * Saves all the static HTML pages in a directory.
 * Uses BeautifulSoup to parse all the scraping into a single json file.
