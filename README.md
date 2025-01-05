@@ -127,9 +127,9 @@ This will parse all the HTML files and create a single JSON file.
 Contributions are welcome! To contribute:
 
 1. Fork the repository.
-2. Create a new branch (git checkout -b feature/my-new-feature).
+2. Create a new branch (`git checkout -b feature/my-new-feature`).
 3. Make your changes.
-4. Commit your changes (git commit -am 'Add new feature').
-5. Push to the branch (git push origin feature/my-new-feature).
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature/my-new-feature`).
 6. Create a pull request.
 
