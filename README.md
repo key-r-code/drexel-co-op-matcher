@@ -107,6 +107,7 @@ This will parse all the HTML files and create a single JSON file.
 - Add pagination handling
 - Add upcoming co-op postings and previously applied co-ops 
 - Replace all time.sleep() calls with self.wait.until
+- Make it browser agnostic (currently using Safari)
 
 **LLM-pipeline**
 
