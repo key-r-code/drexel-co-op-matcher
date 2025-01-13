@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
+from selenium.common.exceptions import StaleElementReferenceException
 import time
 import os
 
@@ -18,6 +19,7 @@ class dragonScraper:
         # chrome_options.add_argument("--enable-automatic-inspection")
         # self.driver = webdriver.Chrome(options=chrome_options)
 
+        # uncomment code line below for firefox
         # firefox_options = webdriver.FirefoxOptions()
         # firefox_options.add_argument("--enable-automatic-inspection")
         # self.driver = webdriver.Firefox(options=firefox_options)
@@ -161,51 +163,59 @@ class dragonScraper:
 
     def scrape_all_postings(self):
         while True:
-            # Get records info from the text
-            records_text = self.driver.find_element(By.CLASS_NAME, "centeraligntext").text
-            start_record = int(records_text.split("to")[0].split()[-1])
-            end_record = int(records_text.split("to")[1].split()[0])
-            total_records = int(records_text.split("of")[1].split()[0])
-            records_per_page = end_record - start_record + 1
-            
-            total_pages = -(-total_records // records_per_page)  
-            current_page = -(-end_record // records_per_page)
-            
-            print(f"Processing page {current_page} of {total_pages} (Total records: {total_records})")
-            
-            # Get all job links on current page
-            job_links = self.driver.find_elements(By.XPATH, "//a[.//span[contains(@class, 'strongtext')]]")
-            print(f"Found {len(job_links)} jobs on this page")
-        
-            for i, job in enumerate(job_links):
-                try:
-                    job.click()
-                    print(f"Clicked job {i + 1}")
-                    time.sleep(2)
-                
-                    global_index = (current_page - 1) * records_per_page + i
-                    self.scrape_each_posting(global_index)
-
-                    time.sleep(2)
-
-                    self.driver.back()
-                    print(f"Returned to main page")
-                    
-                except Exception as e:
-                    print(f"Error processing job {i + 1}: {str(e)}")
-                    continue
-            
-            if current_page >= total_pages:
-                print("Reached last page")
-                break
-                
             try:
+
+                records_text = self.driver.find_element(By.CLASS_NAME, "centeraligntext").text
+                start_record = int(records_text.split("to")[0].split()[-1])
+                end_record = int(records_text.split("to")[1].split()[0])
+                total_records = int(records_text.split("of")[1].split()[0])
+                records_per_page = end_record - start_record + 1
+                
+                total_pages = -(-total_records // records_per_page)  
+                current_page = -(-end_record // records_per_page)
+                
+                print(f"Processing page {current_page} of {total_pages} (Total records: {total_records})")
+                
+                # Get all job links on current page
+                job_links = self.driver.find_elements(By.XPATH, "//a[.//span[contains(@class, 'strongtext')]]")
+                print(f"Found {len(job_links)} jobs on this page")
+            
+                for i, job in enumerate(job_links):
+                    try:
+                        try:
+                            job.click()
+                        except StaleElementReferenceException:
+                            # If stale, re-find elements and retry
+                            job_links = self.driver.find_elements(By.XPATH, "//a[.//span[contains(@class, 'strongtext')]]")
+                            job_links[i].click()
+                            
+                        print(f"Clicked job {i + 1}")
+                        time.sleep(2)
+                    
+                        global_index = (current_page - 1) * records_per_page + i
+                        self.scrape_each_posting(global_index)
+
+                        time.sleep(2)
+
+                        self.driver.back()
+                        print(f"Returned to main page")
+                        
+                    except Exception as e:
+                        print(f"Error processing job {i + 1}: {str(e)}")
+                        continue
+                
+                # Check if we're on the last page
+                if current_page >= total_pages:
+                    print("Reached last page")
+                    break
+                    
+                # If not on last page, go to next page
                 next_button = self.wait.until(
                     EC.presence_of_element_located((By.CSS_SELECTOR, "img[name='Arrow-Next']"))
                 )
                 next_button.click()
                 time.sleep(2)
-                    
+
             except Exception as e:
-                print(f"Error navigating to next page: {str(e)}")
+                print(f"Error in main loop: {str(e)}")
                 break
