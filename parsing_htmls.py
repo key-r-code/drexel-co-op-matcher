@@ -3,7 +3,6 @@ import json
 import os
 
 def parse_job_html(directory, file_path):
-    
     full_path = os.path.join(directory, file_path)
     
     with open(full_path, 'r') as f:
@@ -31,13 +30,17 @@ def parse_job_html(directory, file_path):
                desc = header.find_next('span', {'class': 'smallertext'})
                if desc:
                    return desc.text.strip().capitalize().replace('\n', '').replace('\t', '')
-            #    replace('\u2019', "'").replace('\u2022', '').replace('\t', '').replace('\u2013', '-').replace('\u2010', '-')
            return "N/A"
        except:
            return "N/A"
     
     try:
-        title = soup.find('span', {'class': 'largertext'}).text
+        title_element = soup.find('span', {'class': 'largertext'})
+        if title_element:
+            title = title_element.text.strip()
+        else:
+            title_element = soup.find('h1') or soup.find('h2') or soup.find('title')
+            title = title_element.text.strip() if title_element else "N/A"
         job_data['title'] = title
     except:
         job_data['title'] = "N/A"
@@ -59,21 +62,29 @@ def parse_job_html(directory, file_path):
 
 def process_all_files(directory):
     all_jobs = {}
+    title_counts = {}  
+
+    # handle duplicate job titles
     
     for filename in os.listdir(directory):
         if filename.endswith('.html'):
             job_data = parse_job_html(directory, filename)
-
-            if job_data['title'] != "N/A":
-                job_id = job_data['title']
+            base_title = job_data['title']
+            
+            if base_title == "N/A":
+                job_id = f"Unknown Position {len(title_counts.get('N/A', [])) + 1}"
             else:
-                job_id = filename.replace('.html', '')
-
+                if base_title not in title_counts:
+                    title_counts[base_title] = 1
+                    job_id = base_title
+                else:
+                    title_counts[base_title] += 1
+                    job_id = f"{base_title} {title_counts[base_title]}"
+            
             all_jobs[job_id] = job_data
-
+    
     with open('all_jobs.json', 'w', encoding='utf-8') as f:
-        json.dump(all_jobs, f, indent=4, ensure_ascii=False)  
+        json.dump(all_jobs, f, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
     process_all_files('job_htmls1/')
-
