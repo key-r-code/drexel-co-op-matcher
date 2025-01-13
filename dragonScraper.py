@@ -13,8 +13,14 @@ class dragonScraper:
         safari_options = webdriver.SafariOptions()
         safari_options.add_argument("--enable-automatic-inspection")
         self.driver = webdriver.Safari(options=safari_options)
+
+        # chrome_options = webdriver.ChromeOptions()
+        # chrome_options.add_argument("--enable-automatic-inspection")
+        # self.driver = webdriver.Chrome(options=chrome_options)
+
         self.wait = WebDriverWait(self.driver, 20)
         self.driver.set_window_size(1440, 900)
+
 
     def login_to_banner(self, username, password):
         """Connects to Drexel Banner"""
