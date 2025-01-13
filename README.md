@@ -88,7 +88,7 @@ touch .env
 
 7. Create list of interested majors in [main.py](main.py). See [majors.json](majors.json) for all major abbreviations used by the portal.
 
-8. `dragonScraper` currently uses the Safari webdriver. Uncommment lines [17-23](https://github.com/key-r-code/drexel-co-op-matcher/blob/66d29f4dd4943a8e28521014e862405c74a7f2a7/dragonScraper.py#L17) to use Chrome or Firefox.
+8. `dragonScraper` currently uses the Safari webdriver. Uncomment lines [17-23](https://github.com/key-r-code/drexel-co-op-matcher/blob/66d29f4dd4943a8e28521014e862405c74a7f2a7/dragonScraper.py#L17) to use Chrome or Firefox.
 
 9. Run `main.py`:
 ```bash
