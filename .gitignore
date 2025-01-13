@@ -2,6 +2,7 @@
 /faiss_index
 /job_htmls
 .env
+.venv
 __pycache__
 test*.py
 Untitled*.ipynb
