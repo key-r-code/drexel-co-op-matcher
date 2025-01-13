@@ -92,6 +92,8 @@ python3 main.py
 ```
 This will create a subdirectory and save all the static HTML files.
 
+Change the name of the HTML directory in `dragonScraper.py` if you used the scraper before.
+
 8. Run `parsing_htmls.py`:
 ```bash
 python3 parsing_htmls.py
@@ -104,10 +106,10 @@ This will parse all the HTML files and create a single JSON file.
 
 **dragonScraper.py**
 
-- Add pagination handling
-- Add upcoming co-op postings and previously applied co-ops 
+- ~~Add pagination handling~~
+- ~~Add upcoming co-op postings and previously applied co-ops~~
 - Replace all time.sleep() calls with self.wait.until
-- Make it browser agnostic (currently using Safari)
+- Add Chrome and Firefox support (currently only support Safari WebDriver)
 
 **LLM-pipeline**
 
