@@ -88,7 +88,9 @@ touch .env
 
 7. Create list of interested majors in [main.py](main.py). See [majors.json](majors.json) for all major abbreviations used by the portal.
 
-8. Run `main.py`:
+8. `dragonScraper` currently uses the Safari webdriver. Uncommment lines [17-23](https://github.com/key-r-code/drexel-co-op-matcher/blob/66d29f4dd4943a8e28521014e862405c74a7f2a7/dragonScraper.py#L17) to use Chrome or Firefox.
+
+9. Run `main.py`:
 ```bash
 python3 main.py
 ```
@@ -96,13 +98,13 @@ This will create a subdirectory and save all the static HTML files.
 
 Change the name of the HTML directory in `dragonScraper.py` if you used the scraper before.
 
-9. Run `parsing_htmls.py`:
+10. Run `parsing_htmls.py`:
 ```bash
 python3 parsing_htmls.py
 ```
 This will parse all the HTML files and create a single JSON file.
 
-10. Run `gemini-analysis-starter-nb.ipynb`
+11. Run `gemini-analysis-starter-nb.ipynb`
 
 ## TO DO:
 
@@ -111,7 +113,7 @@ This will parse all the HTML files and create a single JSON file.
 - ~~Add pagination handling~~
 - ~~Add upcoming co-op postings and previously applied co-ops~~
 - Replace all time.sleep() calls with self.wait.until
-- Add Chrome and Firefox support (currently only support Safari WebDriver)
+- ~~Add Chrome and Firefox support (currently only support Safari WebDriver)~~
 
 **LLM-pipeline**
 
