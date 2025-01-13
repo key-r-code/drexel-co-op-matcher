@@ -18,6 +18,10 @@ class dragonScraper:
         # chrome_options.add_argument("--enable-automatic-inspection")
         # self.driver = webdriver.Chrome(options=chrome_options)
 
+        # firefox_options = webdriver.FirefoxOptions()
+        # firefox_options.add_argument("--enable-automatic-inspection")
+        # self.driver = webdriver.Firefox(options=firefox_options)
+
         self.wait = WebDriverWait(self.driver, 20)
         self.driver.set_window_size(1440, 900)
 
