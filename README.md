@@ -86,7 +86,7 @@ touch .env
 
 6. Add Drexel credentials in [main.py](main.py)
 
-7. Create list of interested majors in [main.py](main.py). See [majors.json](majors.json) for all major codes.
+7. Create list of interested majors in [main.py](main.py). See [majors.json](majors.json) for all major abbreviations used by the portal.
 
 8. Run `main.py`:
 ```bash
