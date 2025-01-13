@@ -86,7 +86,9 @@ touch .env
 
 6. Add Drexel credentials in [main.py](main.py)
 
-7. Run `main.py`:
+7. Create list of interested majors in [main.py](main.py). See [majors.json](majors.json) for all major codes.
+
+8. Run `main.py`:
 ```bash
 python3 main.py
 ```
@@ -94,13 +96,13 @@ This will create a subdirectory and save all the static HTML files.
 
 Change the name of the HTML directory in `dragonScraper.py` if you used the scraper before.
 
-8. Run `parsing_htmls.py`:
+9. Run `parsing_htmls.py`:
 ```bash
 python3 parsing_htmls.py
 ```
 This will parse all the HTML files and create a single JSON file.
 
-9. Run `gemini-analysis-starter-nb.ipynb`
+10. Run `gemini-analysis-starter-nb.ipynb`
 
 ## TO DO:
 
