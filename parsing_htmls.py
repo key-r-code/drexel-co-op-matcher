@@ -30,7 +30,8 @@ def parse_job_html(directory, file_path):
            if header:
                desc = header.find_next('span', {'class': 'smallertext'})
                if desc:
-                   return desc.text.strip().capitalize().replace('\n', '').replace('\u2019', "'").replace('\u2022', '').replace('\t', '').replace('\u2013', '-')
+                   return desc.text.strip().capitalize().replace('\n', '').replace('\t', '')
+            #    replace('\u2019', "'").replace('\u2022', '').replace('\t', '').replace('\u2013', '-').replace('\u2010', '-')
            return "N/A"
        except:
            return "N/A"
@@ -71,8 +72,8 @@ def process_all_files(directory):
             all_jobs[job_id] = job_data
 
     with open('all_jobs.json', 'w', encoding='utf-8') as f:
-        json.dump(all_jobs, f, indent=4)  
+        json.dump(all_jobs, f, indent=4, ensure_ascii=False)  
 
 if __name__ == "__main__":
-    process_all_files('job_htmls/')
+    process_all_files('job_htmls1/')
 
