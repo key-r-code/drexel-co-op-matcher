@@ -1,8 +1,9 @@
 /.ipynb_checkpoints
 /faiss_index
-/job_htmls
+/job_htmls*
 .env
 .venv
+*.pdf
 __pycache__
 test*.py
 Untitled*.ipynb
