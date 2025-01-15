@@ -15,11 +15,12 @@ class dragonScraper:
         safari_options.add_argument("--enable-automatic-inspection")
         self.driver = webdriver.Safari(options=safari_options)
 
+        # uncomment code below for chrome
         # chrome_options = webdriver.ChromeOptions()
         # chrome_options.add_argument("--enable-automatic-inspection")
         # self.driver = webdriver.Chrome(options=chrome_options)
 
-        # uncomment code line below for firefox
+        # uncomment code below for firefox
         # firefox_options = webdriver.FirefoxOptions()
         # firefox_options.add_argument("--enable-automatic-inspection")
         # self.driver = webdriver.Firefox(options=firefox_options)
@@ -204,12 +205,10 @@ class dragonScraper:
                         print(f"Error processing job {i + 1}: {str(e)}")
                         continue
                 
-                # Check if we're on the last page
                 if current_page >= total_pages:
                     print("Reached last page")
                     break
                     
-                # If not on last page, go to next page
                 next_button = self.wait.until(
                     EC.presence_of_element_located((By.CSS_SELECTOR, "img[name='Arrow-Next']"))
                 )
