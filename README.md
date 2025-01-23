@@ -2,8 +2,6 @@
 
 Ever get tired of manually scrolling through all the co-op postings on DrexelOne all within one week? Now you don't have to!
 
-This project aims to help anyone find the most suitable co-op positions by using LLMs.
-
 ```
                           ,     \    /      ,
                          / \    )\__/(     / \
